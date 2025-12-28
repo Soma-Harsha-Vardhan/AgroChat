@@ -1,0 +1,36 @@
+
+MODEL INFORMATION
+-----------------
+Model Name: EfficientNet-B0 (Fine-tuned)
+Framework: PyTorch
+
+INPUT FORMAT
+------------
+Image Size: 224 x 224
+Channels: RGB
+Normalization:
+  mean = [0.485, 0.456, 0.406]
+  std  = [0.229, 0.224, 0.225]
+
+DATASET
+-------
+Dataset Name: farm_insects
+Number of Classes: 15
+Class Names: ['Africanized Honey Bees (Killer Bees)', 'Aphids', 'Armyworms', 'Brown Marmorated Stink Bugs', 'Cabbage Loopers', 'Citrus Canker', 'Colorado Potato Beetles', 'Corn Borers', 'Corn Earworms', 'Fall Armyworms', 'Fruit Flies', 'Spider Mites', 'Thrips', 'Tomato Hornworms', 'Western Corn Rootworms']
+
+TRAINING DETAILS
+----------------
+Backbone: ImageNet Pretrained
+Fine-tuned Layers: Last 3 EfficientNet blocks + classifier
+Optimizer: Adam
+Learning Rate: 5e-5
+Epochs: 25
+Loss Function: CrossEntropy (class weighted)
+
+PERFORMANCE
+-----------
+Validation Accuracy: ~74–85%
+
+NOTES
+-----
+Use the same architecture and normalization during inference.
